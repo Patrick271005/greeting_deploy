@@ -1,6 +1,6 @@
 services:
   greeting-service:
-    image: pull ghcr.io/patrick271005/greeting-service/app
+    image: ghcr.io/patrick271005/greeting-service/app:latest
     env_file: ./.env
     ports:
       - "8081:8081"
@@ -8,7 +8,7 @@ services:
       - labnet
 
   proxy-service:
-    image: pull ghcr.io/patrick271005/greeting-service/app
+    image: ghcr.io/patrick271005/greeting-service/app
     env_file: ./.env
     depends_on:
       - greeting-service
